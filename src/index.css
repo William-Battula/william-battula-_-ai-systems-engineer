@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-quantum-blue: #00d2ff;
+  --color-quantum-purple: #9d50bb;
+  --color-quantum-dark: #0a0a0a;
+  --color-quantum-gray: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-quantum-dark text-white font-sans antialiased;
+  }
+  
+  ::selection {
+    @apply bg-quantum-blue/30 text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .quantum-gradient {
+    @apply bg-gradient-to-r from-quantum-blue to-quantum-purple;
+  }
+  
+  .quantum-text-gradient {
+    @apply bg-gradient-to-r from-quantum-blue to-quantum-purple bg-clip-text text-transparent;
+  }
+}
